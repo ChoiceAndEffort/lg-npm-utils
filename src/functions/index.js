@@ -2,17 +2,25 @@
  * @Author: suchiva@126.com
  * @Date: 2022-09-15 14:49:05
  * @LastEditors: gonglei
- * @LastEditTime: 2022-09-27 14:05:31
+ * @LastEditTime: 2022-10-10 10:00:03
  * @Description: functions 入口文件
  */
 
-// export * as DeepCompare from './deep-compare';
-// export * as validate from './validate';
 
-import * as Bounce from './bounce';
 import * as Validate from './validate';
+import * as DealEmpty from './deal-empty';
+import * as DealSerialNo from './deal-serial-no';
+import * as Download from './download';
+// import * as Copy from './copy';
+import * as Debounce from './debounce';
+import * as Throttle from './throttle';
 
 export default {
-  ...Bounce,
-  ...Validate
+  ...DealEmpty,
+  ...DealSerialNo,
+  ...Validate,
+  ...Download,
+  // ...Copy,
+  ...Debounce,
+  ...Throttle
 };

@@ -1,14 +1,38 @@
-# 第一个 demo(不打包的demo)
+## 项目名称
 
-## 包的封装
+> hb-utils 前端 utils 库
+> base 基层
+> functions 函数
+> plugins 插件：encrpt echarts
 
-- npm init 初始化一个项目
-- 在 package.json 中的 main 中引入包的入口文件,这里 first-demo/index.js
-- npm login 登录 npm 上
-- npm publish(第二次发布需要修改 package.json 中的版本号)
+## 运行条件
 
-## 包的使用
+> 列出运行该项目所必须的条件和相关依赖
 
-- npm install lg-npm-packs
-- import { testOne } from "lg-npm-packs";
+- rollup
+- rollup-plugin-terser
+- @babel/core
+- rollup-plugin-babel
+- rollup-plugin-cleanup"
 
+## 运行说明
+
+> 项目中运用到的公共方法[utils 文件夹下的]
+
+- 切换到公司外部的 npm 镜像
+- npm install hb-utils -S
+- 方案一:import { A(方法名) } from 'hb-utils'
+- 卸载包 npm uninstall hb-utils
+
+
+## 测试说明
+
+> 如果有测试相关内容需要说明，请填写在这里
+
+## 技术架构
+
+> 使用 Rollup.js 打包的文件
+
+## 协作者
+
+> 张航, 龚磊

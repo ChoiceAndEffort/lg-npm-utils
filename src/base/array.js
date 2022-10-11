@@ -1,10 +1,3 @@
-/*
- * @Author: suchiva@126.com
- * @Date: 2022-09-15 14:49:23
- * @LastEditors: gonglei
- * @LastEditTime: 2022-09-26 17:26:49
- * @Description: Array
- */
 
 /**
  * @description: 树数组转扁平数组
@@ -12,7 +5,7 @@
  * @return {*}
  */
 export function treeToArray(tree) {
-  var res = [];
+  let res = [];
   for (const item of tree) {
     const { children, ...i } = item;
     if (children && children.length) {
@@ -36,4 +29,33 @@ export function group(array, subGroupLength) {
     newArray.push(array.slice(index, (index += subGroupLength)));
   }
   return newArray;
+}
+
+/**
+ * @description: 将数组转换成el-select options对应的数据结构
+ * array:原数组
+ * value:需要变更的value字段名
+ * name:需要变更的name字段名
+ */
+export function saveOptionsArr(array, value, name) {
+  let data = [];
+  array.forEach((element) => {
+    let objs = element;
+    objs.value = element[value];
+    objs.label = element[name];
+    data.push(objs);
+  });
+  return data;
+}
+
+//同上边的方法
+export function arrToSelectArr(arr, labelName, valueName) {
+  let result = [];
+  arr.forEach((item) => {
+    result.push({
+      value: item[valueName],
+      label: item[labelName]
+    });
+  });
+  return result;
 }

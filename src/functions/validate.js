@@ -1,3 +1,12 @@
+/*
+ * @Author: suchiva@126.com
+ * @Date: 2022-09-15 14:49:23
+ * @LastEditors: gonglei
+ * @LastEditTime: 2022-10-09 16:27:03
+ * @Description:值的相关验证
+ */
+
+
 /**
  * @description: 检测手机号是否合法
  * @param {Object} rule-手机号校验规则
@@ -14,6 +23,28 @@ export const validateMobile = (rule, value, callback) => {
     callback();
   }
 };
+
+
+
+
+/**
+ * @description: 检测邮箱是否合法
+ * @param {*} required
+ * @param {*} validator
+ * @param {*} value
+ * @param {*} callback
+ * @return {*}
+ */
+export let validateEmail = (rule, value, callback) =>{
+  if(!value){
+      callback();
+  }else if( /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(value)) {
+      callback();
+  } else {
+      callback(new Error('邮箱地址不合法，请重新输入'));
+  }
+}
+
 
 /**
  * @description:验证身份证号码
